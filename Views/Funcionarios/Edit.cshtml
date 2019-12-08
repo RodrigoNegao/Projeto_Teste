@@ -1,0 +1,17 @@
+﻿@model Projeto_Teste.Models.Funcionario
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+    <form action="@Url.Action("Edit", "Funcionarios")" method="post">
+        Nome
+        <input type="text" name="Nome" value="@Model.Nome" />
+        Função
+        <input type="text" name="Funcao.Descricao" value="@(Model.Funcao?.Descricao)" />
+        <input type="submit" value="Enviar" />
+    </form>
+        
+
+

@@ -1,0 +1,25 @@
+﻿@model List<Projeto_Teste.Models.Funcionario>
+@{
+    ViewBag.Title = "Index";
+}
+
+@foreach (var item in Model)
+{
+    <p>Nome: @item.Nome</p>
+    <p>CPF: @item.CPF</p>
+    <p>Função: @item.Funcao.Descricao</p>
+    <ul>
+        Dependentes
+
+        @if (item.Dependentes != null)
+        {
+            foreach (var item2 in item.Dependentes)
+            {
+                <li>Nome:@item2.Nome</li>
+                <li>Parentesco:@item2.Parentesco.ToString()</li>
+            }
+        }
+
+    </ul>
+}
+
